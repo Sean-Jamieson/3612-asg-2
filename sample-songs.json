@@ -1,0 +1,136 @@
+[{
+		"song_id": 1167,
+		"title": "Alarm",
+		"year": 2016,
+		"artist": {
+			"id": 9,
+			"name": "Anne-Marie"
+		},
+		"genre": {
+			"id": 110,
+			"name": "dance pop"
+		},
+		"details": {
+			"duration": 206,
+			"bpm": 147,
+			"popularity": 62,
+			"loudness": -5
+		},
+		"analytics": {
+			"energy": 59,
+			"danceability": 76,
+			"liveness": 18,
+			"valence": 81,
+			"acousticness": 8,
+			"speechiness": 23
+		}
+	},
+	{
+		"song_id": 1168,
+		"title": "Into You",
+		"year": 2016,
+		"artist": {
+			"id": 11,
+			"name": "Ariana Grande"
+		},
+		"genre": {
+			"id": 110,
+			"name": "dance pop"
+		},
+		"details": {
+			"duration": 244,
+			"bpm": 108,
+			"popularity": 73,
+			"loudness": -6
+		},
+		"analytics": {
+			"energy": 73,
+			"danceability": 62,
+			"liveness": 14,
+			"valence": 37,
+			"acousticness": 2,
+			"speechiness": 11
+		}
+	},
+	{
+		"song_id": 1169,
+		"title": "Side To Side",
+		"year": 2016,
+		"artist": {
+			"id": 11,
+			"name": "Ariana Grande"
+		},
+		"genre": {
+			"id": 110,
+			"name": "dance pop"
+		},
+		"details": {
+			"duration": 226,
+			"bpm": 159,
+			"popularity": 72,
+			"loudness": -6
+		},
+		"analytics": {
+			"energy": 74,
+			"danceability": 65,
+			"liveness": 24,
+			"valence": 61,
+			"acousticness": 5,
+			"speechiness": 23
+		}
+	},
+	{
+		"song_id": 1170,
+		"title": "Dangerous Woman",
+		"year": 2016,
+		"artist": {
+			"id": 11,
+			"name": "Ariana Grande"
+		},
+		"genre": {
+			"id": 110,
+			"name": "dance pop"
+		},
+		"details": {
+			"duration": 236,
+			"bpm": 134,
+			"popularity": 72,
+			"loudness": -5
+		},
+		"analytics": {
+			"energy": 60,
+			"danceability": 66,
+			"liveness": 36,
+			"valence": 29,
+			"acousticness": 5,
+			"speechiness": 4
+		}
+	},
+	{
+		"song_id": 1171,
+		"title": "Sorry",
+		"year": 2016,
+		"artist": {
+			"id": 17,
+			"name": "Beyoncé"
+		},
+		"genre": {
+			"id": 110,
+			"name": "dance pop"
+		},
+		"details": {
+			"duration": 233,
+			"bpm": 130,
+			"popularity": 72,
+			"loudness": -7
+		},
+		"analytics": {
+			"energy": 60,
+			"danceability": 78,
+			"liveness": 25,
+			"valence": 36,
+			"acousticness": 0,
+			"speechiness": 5
+		}
+	}
+]

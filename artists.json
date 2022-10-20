@@ -1,0 +1,851 @@
+[{
+		"id": 1,
+		"name": "2 Chainz",
+		"type": "Solo"
+	},
+	{
+		"id": 2,
+		"name": "21 Savage",
+		"type": "Solo"
+	},
+	{
+		"id": 3,
+		"name": "5 Seconds of Summer",
+		"type": "Band/Group"
+	},
+	{
+		"id": 4,
+		"name": "6ix9ine",
+		"type": "Solo"
+	},
+	{
+		"id": 5,
+		"name": "A Boogie Wit da Hoodie",
+		"type": "Solo"
+	},
+	{
+		"id": 6,
+		"name": "AJ Tracey",
+		"type": "Solo"
+	},
+	{
+		"id": 7,
+		"name": "AJR",
+		"type": "Trio"
+	},
+	{
+		"id": 8,
+		"name": "Aminé",
+		"type": "Solo"
+	},
+	{
+		"id": 9,
+		"name": "Anne-Marie",
+		"type": "Solo"
+	},
+	{
+		"id": 10,
+		"name": "Anuel AA",
+		"type": "Solo"
+	},
+	{
+		"id": 11,
+		"name": "Ariana Grande",
+		"type": "Solo"
+	},
+	{
+		"id": 12,
+		"name": "Ashley O",
+		"type": "Solo"
+	},
+	{
+		"id": 13,
+		"name": "Axwell / Ingrosso",
+		"type": "Duo"
+	},
+	{
+		"id": 14,
+		"name": "B Young",
+		"type": "Solo"
+	},
+	{
+		"id": 15,
+		"name": "Bad Bunny",
+		"type": "Solo"
+	},
+	{
+		"id": 16,
+		"name": "Bazzi",
+		"type": "Solo"
+	},
+	{
+		"id": 17,
+		"name": "Beyoncé",
+		"type": "Solo"
+	},
+	{
+		"id": 18,
+		"name": "Billie Eilish",
+		"type": "Solo"
+	},
+	{
+		"id": 19,
+		"name": "blackbear",
+		"type": "Solo"
+	},
+	{
+		"id": 20,
+		"name": "BLACKPINK",
+		"type": "Band/Group"
+	},
+	{
+		"id": 21,
+		"name": "BlocBoy JB",
+		"type": "Solo"
+	},
+	{
+		"id": 22,
+		"name": "Blueface",
+		"type": "Solo"
+	},
+	{
+		"id": 23,
+		"name": "Bruno Mars",
+		"type": "Solo"
+	},
+	{
+		"id": 24,
+		"name": "BTS",
+		"type": "Band/Group"
+	},
+	{
+		"id": 25,
+		"name": "Calvin Harris",
+		"type": "Solo"
+	},
+	{
+		"id": 26,
+		"name": "Camila Cabello",
+		"type": "Solo"
+	},
+	{
+		"id": 27,
+		"name": "Cardi B",
+		"type": "Solo"
+	},
+	{
+		"id": 28,
+		"name": "Cashmere Cat",
+		"type": "Solo"
+	},
+	{
+		"id": 29,
+		"name": "Charlie Puth",
+		"type": "Solo"
+	},
+	{
+		"id": 30,
+		"name": "Cheat Codes",
+		"type": "Trio"
+	},
+	{
+		"id": 31,
+		"name": "Childish Gambino",
+		"type": "Solo"
+	},
+	{
+		"id": 32,
+		"name": "Chris Brown",
+		"type": "Solo"
+	},
+	{
+		"id": 33,
+		"name": "Clean Bandit",
+		"type": "Band/Group"
+	},
+	{
+		"id": 34,
+		"name": "Dan + Shay",
+		"type": "Duo"
+	},
+	{
+		"id": 35,
+		"name": "Daya",
+		"type": "Solo"
+	},
+	{
+		"id": 36,
+		"name": "Demi Lovato",
+		"type": "Solo"
+	},
+	{
+		"id": 37,
+		"name": "Deorro",
+		"type": "Solo"
+	},
+	{
+		"id": 38,
+		"name": "DJ Khaled",
+		"type": "Solo"
+	},
+	{
+		"id": 39,
+		"name": "DJ Snake",
+		"type": "Solo"
+	},
+	{
+		"id": 40,
+		"name": "DNCE",
+		"type": "Band/Group"
+	},
+	{
+		"id": 41,
+		"name": "Doja Cat",
+		"type": "Solo"
+	},
+	{
+		"id": 42,
+		"name": "Drake",
+		"type": "Solo"
+	},
+	{
+		"id": 43,
+		"name": "Dua Lipa",
+		"type": "Solo"
+	},
+	{
+		"id": 44,
+		"name": "Ed Sheeran",
+		"type": "Solo"
+	},
+	{
+		"id": 45,
+		"name": "Ella Mai",
+		"type": "Solo"
+	},
+	{
+		"id": 46,
+		"name": "Enrique Iglesias",
+		"type": "Solo"
+	},
+	{
+		"id": 47,
+		"name": "EO",
+		"type": "Solo"
+	},
+	{
+		"id": 48,
+		"name": "Fifth Harmony",
+		"type": "Band/Group"
+	},
+	{
+		"id": 49,
+		"name": "FINNEAS",
+		"type": "Solo"
+	},
+	{
+		"id": 50,
+		"name": "Flipp Dinero",
+		"type": "Solo"
+	},
+	{
+		"id": 51,
+		"name": "Florida Georgia Line",
+		"type": "Duo"
+	},
+	{
+		"id": 52,
+		"name": "Future",
+		"type": "Solo"
+	},
+	{
+		"id": 55,
+		"name": "G-Eazy",
+		"type": "Solo"
+	},
+	{
+		"id": 53,
+		"name": "Galantis",
+		"type": "Duo"
+	},
+	{
+		"id": 54,
+		"name": "Garrett Nash",
+		"type": "Solo"
+	},
+	{
+		"id": 56,
+		"name": "George Ezra",
+		"type": "Solo"
+	},
+	{
+		"id": 57,
+		"name": "Hailee Steinfeld",
+		"type": "Solo"
+	},
+	{
+		"id": 58,
+		"name": "Halsey",
+		"type": "Solo"
+	},
+	{
+		"id": 59,
+		"name": "iann dior",
+		"type": "Solo"
+	},
+	{
+		"id": 60,
+		"name": "Imagine Dragons",
+		"type": "Band/Group"
+	},
+	{
+		"id": 61,
+		"name": "James Arthur",
+		"type": "Solo"
+	},
+	{
+		"id": 62,
+		"name": "Jason Aldean",
+		"type": "Solo"
+	},
+	{
+		"id": 63,
+		"name": "Jax Jones",
+		"type": "Solo"
+	},
+	{
+		"id": 64,
+		"name": "Joel Corry",
+		"type": "Solo"
+	},
+	{
+		"id": 65,
+		"name": "Jonas Blue",
+		"type": "Solo"
+	},
+	{
+		"id": 66,
+		"name": "Jonas Brothers",
+		"type": "Band/Group"
+	},
+	{
+		"id": 67,
+		"name": "Juice WRLD",
+		"type": "Solo"
+	},
+	{
+		"id": 68,
+		"name": "Justin Timberlake",
+		"type": "Solo"
+	},
+	{
+		"id": 69,
+		"name": "Kehlani",
+		"type": "Solo"
+	},
+	{
+		"id": 70,
+		"name": "Kendrick Lamar",
+		"type": "Solo"
+	},
+	{
+		"id": 71,
+		"name": "Khalid",
+		"type": "Solo"
+	},
+	{
+		"id": 72,
+		"name": "King Princess",
+		"type": "Solo"
+	},
+	{
+		"id": 73,
+		"name": "KYLE",
+		"type": "Solo"
+	},
+	{
+		"id": 74,
+		"name": "Lady Gaga",
+		"type": "Solo"
+	},
+	{
+		"id": 75,
+		"name": "Lana Del Rey",
+		"type": "Solo"
+	},
+	{
+		"id": 76,
+		"name": "Låpsley",
+		"type": "Solo"
+	},
+	{
+		"id": 77,
+		"name": "Lauv",
+		"type": "Solo"
+	},
+	{
+		"id": 78,
+		"name": "Lewis Capaldi",
+		"type": "Solo"
+	},
+	{
+		"id": 79,
+		"name": "Liam Payne",
+		"type": "Solo"
+	},
+	{
+		"id": 80,
+		"name": "Lil Baby",
+		"type": "Solo"
+	},
+	{
+		"id": 81,
+		"name": "Lil Nas X",
+		"type": "Solo"
+	},
+	{
+		"id": 82,
+		"name": "Lil Peep",
+		"type": "Solo"
+	},
+	{
+		"id": 83,
+		"name": "Lil Pump",
+		"type": "Solo"
+	},
+	{
+		"id": 84,
+		"name": "Lil Tecca",
+		"type": "Solo"
+	},
+	{
+		"id": 85,
+		"name": "Lil Uzi Vert",
+		"type": "Solo"
+	},
+	{
+		"id": 86,
+		"name": "Lil Wayne",
+		"type": "Solo"
+	},
+	{
+		"id": 87,
+		"name": "Little Mix",
+		"type": "Band/Group"
+	},
+	{
+		"id": 88,
+		"name": "Lizzo",
+		"type": "Solo"
+	},
+	{
+		"id": 89,
+		"name": "Logic",
+		"type": "Solo"
+	},
+	{
+		"id": 90,
+		"name": "Lorde",
+		"type": "Solo"
+	},
+	{
+		"id": 91,
+		"name": "Loud Luxury",
+		"type": "Duo"
+	},
+	{
+		"id": 92,
+		"name": "Luis Fonsi",
+		"type": "Solo"
+	},
+	{
+		"id": 93,
+		"name": "Lunay",
+		"type": "Solo"
+	},
+	{
+		"id": 94,
+		"name": "M.O",
+		"type": "Band/Group"
+	},
+	{
+		"id": 95,
+		"name": "Macklemore",
+		"type": "Solo"
+	},
+	{
+		"id": 96,
+		"name": "Maggie Rogers",
+		"type": "Solo"
+	},
+	{
+		"id": 97,
+		"name": "Major Lazer",
+		"type": "Trio"
+	},
+	{
+		"id": 98,
+		"name": "Maluma",
+		"type": "Solo"
+	},
+	{
+		"id": 99,
+		"name": "Marc E. Bassy",
+		"type": "Solo"
+	},
+	{
+		"id": 100,
+		"name": "Mark Ronson",
+		"type": "Solo"
+	},
+	{
+		"id": 101,
+		"name": "Maroon 5",
+		"type": "Band/Group"
+	},
+	{
+		"id": 102,
+		"name": "Marshmello",
+		"type": "Solo"
+	},
+	{
+		"id": 103,
+		"name": "Martin Garrix",
+		"type": "Solo"
+	},
+	{
+		"id": 104,
+		"name": "Meek Mill",
+		"type": "Solo"
+	},
+	{
+		"id": 105,
+		"name": "Megan Thee Stallion",
+		"type": "Solo"
+	},
+	{
+		"id": 106,
+		"name": "Meghan Trainor",
+		"type": "Solo"
+	},
+	{
+		"id": 107,
+		"name": "Migos",
+		"type": "Trio"
+	},
+	{
+		"id": 108,
+		"name": "Mike Perry",
+		"type": "Solo"
+	},
+	{
+		"id": 109,
+		"name": "Mike Posner",
+		"type": "Solo"
+	},
+	{
+		"id": 110,
+		"name": "Miley Cyrus",
+		"type": "Solo"
+	},
+	{
+		"id": 111,
+		"name": "MK",
+		"type": "Solo"
+	},
+	{
+		"id": 113,
+		"name": "Mustard",
+		"type": "Solo"
+	},
+	{
+		"id": 112,
+		"name": "MØ",
+		"type": "Solo"
+	},
+	{
+		"id": 114,
+		"name": "NF",
+		"type": "Solo"
+	},
+	{
+		"id": 115,
+		"name": "Niall Horan",
+		"type": "Solo"
+	},
+	{
+		"id": 116,
+		"name": "Nick Jonas",
+		"type": "Solo"
+	},
+	{
+		"id": 117,
+		"name": "Nio Garcia",
+		"type": "Solo"
+	},
+	{
+		"id": 118,
+		"name": "NLE Choppa",
+		"type": "Solo"
+	},
+	{
+		"id": 119,
+		"name": "Normani",
+		"type": "Solo"
+	},
+	{
+		"id": 120,
+		"name": "Offset",
+		"type": "Solo"
+	},
+	{
+		"id": 121,
+		"name": "Olivia Holt",
+		"type": "Solo"
+	},
+	{
+		"id": 122,
+		"name": "OneRepublic",
+		"type": "Band/Group"
+	},
+	{
+		"id": 123,
+		"name": "Ozuna",
+		"type": "Solo"
+	},
+	{
+		"id": 124,
+		"name": "P!nk",
+		"type": "Solo"
+	},
+	{
+		"id": 125,
+		"name": "PARTYNEXTDOOR",
+		"type": "Solo"
+	},
+	{
+		"id": 126,
+		"name": "Playboi Carti",
+		"type": "Solo"
+	},
+	{
+		"id": 127,
+		"name": "Polo G",
+		"type": "Solo"
+	},
+	{
+		"id": 128,
+		"name": "Portugal. The Man",
+		"type": "Band/Group"
+	},
+	{
+		"id": 129,
+		"name": "Post Malone",
+		"type": "Solo"
+	},
+	{
+		"id": 130,
+		"name": "Rae Sremmurd",
+		"type": "Duo"
+	},
+	{
+		"id": 131,
+		"name": "Regard",
+		"type": "Solo"
+	},
+	{
+		"id": 132,
+		"name": "Rich The Kid",
+		"type": "Solo"
+	},
+	{
+		"id": 133,
+		"name": "Rihanna",
+		"type": "Solo"
+	},
+	{
+		"id": 134,
+		"name": "Sam Feldt",
+		"type": "Solo"
+	},
+	{
+		"id": 135,
+		"name": "Sam Smith",
+		"type": "Solo"
+	},
+	{
+		"id": 136,
+		"name": "Saweetie",
+		"type": "Solo"
+	},
+	{
+		"id": 137,
+		"name": "SAYGRACE",
+		"type": "Solo"
+	},
+	{
+		"id": 138,
+		"name": "Scouting For Girls",
+		"type": "Band/Group"
+	},
+	{
+		"id": 139,
+		"name": "Sean Paul",
+		"type": "Solo"
+	},
+	{
+		"id": 140,
+		"name": "Sech",
+		"type": "Solo"
+	},
+	{
+		"id": 141,
+		"name": "Selena Gomez",
+		"type": "Solo"
+	},
+	{
+		"id": 142,
+		"name": "Shawn Mendes",
+		"type": "Solo"
+	},
+	{
+		"id": 143,
+		"name": "Sheck Wes",
+		"type": "Solo"
+	},
+	{
+		"id": 144,
+		"name": "Sigala",
+		"type": "Solo"
+	},
+	{
+		"id": 145,
+		"name": "Sigrid",
+		"type": "Solo"
+	},
+	{
+		"id": 146,
+		"name": "Steve Aoki",
+		"type": "Solo"
+	},
+	{
+		"id": 147,
+		"name": "Stormzy",
+		"type": "Solo"
+	},
+	{
+		"id": 148,
+		"name": "SZA",
+		"type": "Solo"
+	},
+	{
+		"id": 149,
+		"name": "Taylor Swift",
+		"type": "Solo"
+	},
+	{
+		"id": 150,
+		"name": "The 1975",
+		"type": "Band/Group"
+	},
+	{
+		"id": 151,
+		"name": "The Chainsmokers",
+		"type": "Duo"
+	},
+	{
+		"id": 152,
+		"name": "The Lumineers",
+		"type": "Band/Group"
+	},
+	{
+		"id": 153,
+		"name": "The Vamps",
+		"type": "Duo"
+	},
+	{
+		"id": 154,
+		"name": "The Weeknd",
+		"type": "Solo"
+	},
+	{
+		"id": 155,
+		"name": "Timeflies",
+		"type": "Duo"
+	},
+	{
+		"id": 156,
+		"name": "Tinie Tempah",
+		"type": "Solo"
+	},
+	{
+		"id": 157,
+		"name": "Tove Lo",
+		"type": "Solo"
+	},
+	{
+		"id": 158,
+		"name": "Travis Scott",
+		"type": "Solo"
+	},
+	{
+		"id": 159,
+		"name": "Tyga",
+		"type": "Solo"
+	},
+	{
+		"id": 160,
+		"name": "Tyler, The Creator",
+		"type": "Solo"
+	},
+	{
+		"id": 161,
+		"name": "Vance Joy",
+		"type": "Solo"
+	},
+	{
+		"id": 162,
+		"name": "Wiley",
+		"type": "Solo"
+	},
+	{
+		"id": 163,
+		"name": "XXXTENTACION",
+		"type": "Solo"
+	},
+	{
+		"id": 164,
+		"name": "Years & Years",
+		"type": "Band/Group"
+	},
+	{
+		"id": 165,
+		"name": "YG",
+		"type": "Solo"
+	},
+	{
+		"id": 166,
+		"name": "Young T & Bugsey",
+		"type": "Duo"
+	},
+	{
+		"id": 167,
+		"name": "Young Thug",
+		"type": "Solo"
+	},
+	{
+		"id": 168,
+		"name": "Zara Larsson",
+		"type": "Solo"
+	},
+	{
+		"id": 169,
+		"name": "Zay Hilfigerrr",
+		"type": "Solo"
+	},
+	{
+		"id": 170,
+		"name": "ZAYN",
+		"type": "Solo"
+	}
+]
