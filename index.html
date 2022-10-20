@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset=”utf-8">
- <meta name=”viewport” content=”width=device-width”>
- <link rel="stylesheet" href="styles.css">
- <title>Single-Page App</title>
- <script src="assign2.js"></script>
- <link rel="stylsheet" href="styles.css">
+    <meta charset=”utf-8">
+    <meta name=”viewport” content=”width=device-width”>
+    <link rel="stylesheet" href="styles.css">
+    <title>Single-Page App</title>
+    <script src="assign2.js"></script>
+    <link rel="stylsheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
  <header>
@@ -15,10 +18,10 @@
  </header>
  <main>
      <aside>
-        <h2>Basic Song Search</h2>
-        <div id="searchCriteria">
-            <label > 
-                <input type="radio" checked="checked" name="radio">
+        <h2>Search</h2>
+        <div id="search-criteria">
+            <label> 
+                <input id="title" type="radio" checked="checked" name="filter">
                 Title
                 <select>
                     <option>1</option>
@@ -26,8 +29,8 @@
                     <option>3</option>
                 </select>
             </label>
-            <label > 
-                <input type="radio" name="radio">
+            <label> 
+                <input type="radio" name="filter">
                 Artist
                 <select>
                     <option>1</option>
@@ -35,8 +38,8 @@
                     <option>3</option>
                 </select>
             </label>
-            <label > 
-                <input type="radio" name="radio">
+            <label>
+                <input type="radio" name="filter">
                 Genre
                 <select>
                     <option>1</option>
@@ -44,11 +47,24 @@
                     <option>3</option>
                 </select>
             </label>
+            <label class="bordered-input"> 
+                <input type="radio" name="filter">
+                Year
+                <label>Less<input type="number" class="params"></label>
+                <label>Greater<input type="number" class="params"></label>
+            </label>
+            <label class="bordered-input"> 
+                <input type="radio" name="filter">
+                Popularity
+                <label>Less<input type="number" class="params"></label>
+                <label>Greater<input type="number" class="params"></label>
+            </label>
+            <button>Clear</button>
+            <button>Search</button>
         </div>
      </aside>
      <section>
-        <h2>Browse / Search Results</h2>
-
+        <h2>Results</h2>
      </section>
  </main>
  <footer>Sean Jamieson &copy</footer>

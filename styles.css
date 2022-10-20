@@ -1,29 +1,43 @@
-header {
-    display:grid;
-    grid-template-columns: repeat(5, auto);
+body {
+    font-family: 'Open Sans', sans-serif;
 }
-
+header {
+    background-color: lightgrey;
+    border: solid;
+    border-width: 1px;
+}
 header h1 {
-    grid-column-start: 1;
-    grid-column-end: 5;
     text-align: center;
 }
 header button {
-    margin: 25px 20% 0px auto;
+    position: absolute;
+    margin: 25px 50% 0px auto;
     width: 100px;
     height: 30px;
+    top: 3px;
+    left: 87%;
 }
 main {
     display: grid;
     grid-template-columns: repeat(5, auto);
 }
 main aside {
+    padding: 4px;
+    margin: 10px 5px 5px 10px;
+    background-color: lightgrey;
+    border: solid;
+    border-width: 1px;
     grid-column-start: 1;
     grid-column-end: 2;
     text-align: center;
 }
-#searchCriteria  label{
+#search-criteria  label{
     display: block;
+    text-align: left;
+}
+.bordered-input
+.params {
+    width: 45px;
 }
 main section {
     grid-column-start: 2;
