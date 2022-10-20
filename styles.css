@@ -1,0 +1,35 @@
+header {
+    display:grid;
+    grid-template-columns: repeat(5, auto);
+}
+
+header h1 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: center;
+}
+header button {
+    margin: 25px 20% 0px auto;
+    width: 100px;
+    height: 30px;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+}
+main aside {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: center;
+}
+#searchCriteria  label{
+    display: block;
+}
+main section {
+    grid-column-start: 2;
+    grid-column-end: 6; 
+    text-align: center;
+}
+footer {
+    text-align: center;
+}
