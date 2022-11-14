@@ -8,21 +8,89 @@ header {
     border: solid;
     border-width: 1px;
     height: 90px;
+    min-width:947px;
 }
 header h1 {
     text-align: center;
 }
-header button {
+select {
+    width: 60px
+}
+hr {
+    margin: 5px 0px;
+}
+footer {
+    text-align: center;
+}
+/*
+Scroll bar styling borrowed from:
+https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+Then slightly changed
+*/ 
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/*End borrowed code*/
+.popup {
+    margin-left: -150px;
+    background: slategrey;
+    border: groove 2px darkslategray;
+    position: absolute;    
+    top: 15px;
+    left: 50%;
+    width: 300px;
+    height: auto;
+    text-align: center;
+    z-index: 999;
+}
+#blocker {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 99%;
+    width: 99%;
+    z-index: 998;
+}
+.duplicate-button {
+    margin: 10px 0px;
+    width: 115px;
+    height: 30px;
+
+}
+#duplicate-ok {
+    margin: 0px 20px 0px 0px;
+}
+#confirmation-text {
+    margin: 15px;
+}
+#credits {
     position: absolute;
     margin: 0px;
     width: 100px;
     height: 30px;
     top: 30px;
-    left: 87%;
+    left: 86%;
 }
-main {
+#save {
+    position: absolute;
+    margin: 0px;
+    width: 150px;
+    height: 30px;
+    top: 30px;
+    right: 80%;
+}
+#list-view-main {
     display: flex;
-   /* grid-template-columns: repeat(4, auto);*/
 }
 #wrapper {
     display: flex;
@@ -30,17 +98,15 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
-main aside {
+#list-view-main #search {
     font-weight: bold;
     padding: 4px;
     margin: 15px 1% 5px 1%;
     background-color: lightgrey;
     border: solid;
     border-width: 1px;
-    /*grid-column-start: 1;
-    grid-column-end: 2;*/
     text-align: center;
-    width: 255px;
+    min-width: 255px;
     height: 440px;
 }
 input[type="radio"] {
@@ -76,8 +142,9 @@ input[type="radio"] {
     float: right;
     margin-right: 7px;
 }
+
 /*
-borrowed from: 
+Borrowed from: 
 https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp 
 removes arrows on number input
 */
@@ -86,6 +153,8 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+/*End borrowed code*/ 
+
 input[type=number] {
     -moz-appearance: textfield;
 }
@@ -102,38 +171,72 @@ margin-top: -3px;
     padding: 0px 10px; 
 }
 #button-container button{
-    width:49%;
+    margin: 0px;
+    width: 100px;
     height: 30px;
-    border-radius: 5px;
-    border: solid 1px;
-    margin-top: -5px
 }
-main section {
+#list-view-main #results {
     margin: 15px 1% 5px 0px;
     background-color: lightgrey;
     grid-column-start: 2;
     grid-column-end: 6; 
     text-align: center;
-    overflow-y: scroll;
     width: calc(100vw - 255px);
     height: 450px;
-
+    min-width: 675px;
     /*set min-width once we know list width*/
 }
-section ul{
-    margin-left: -30px;
+#result-header {
+    margin: 10px 0px;
+    font-weight: bold;
 }
-section ul li{
+#results #result-list{
+    padding: 0px 0px 0px 10px;
+    margin-left: 0px;
+    background-color:  lightsteelblue;
+    overflow-y: scroll;
+    height: 359px;
+    list-style: none;
+}
+#results #result-list li, #list-header, #playlist li{
     text-align: left;
     display: grid;
     grid-template-columns: 4fr 2fr 1fr 2fr 2fr 1fr; 
 }
-section ul li label{
+.result-title,.playlist-title,.playlist-name{
+    color: darkblue;
+    cursor: pointer;
+}
+#list-header {
+    font-weight: bold;
+}
+#playlist-panel {
+    position: absolute;
+    background-color: lightgrey;
+    border: solid 1px;
+    width: 200px;
+    
+}
+.panel-item {
+    display:block;
+    margin: 5px 10px;
+}
+#panel-button {
+    margin: 0px 0px 5px 80px;
+    width: 115px;
+    height: 30px;
+}
+#list-header {
+    margin-left: 10px;
+}
+#results #result-list li label{
     display: inline-block;
 }
+
 /*
+Borrowed code from:
 https://css-tricks.com/snippets/css/css-triangle/
-old i know.
+It is old I know
 */
 .arrow {
     width: 0; 
@@ -144,28 +247,111 @@ old i know.
     border-top:10px solid skyblue;
     margin: 0px 2px 0px 0px;
 }
-#first-cell {
+/*End borrowed code*/
 
-}
-.remaining-cells {
 
-}
 .result-item {
-    background-color: grey;
-    margin: 0px 0px 10px 0px;
+    margin: 0px;
 }
-#last-cell {
-
-}
-footer {
-    text-align: center;
-}
-li .button-container {
+#result-list li .add-container {
     display: flex;
     align-items: center;
     justify-content: right;
     padding-right: 10px;
 }
-li button {
+#result-list li button {
     height: 22px;
+}
+
+#song-view-main {
+    display: flex;
+    margin: 10px 9px;
+}
+.header-button {
+    position: absolute;
+    margin: 0px;
+    width: 100px;
+    height: 30px;
+    top: 39px;
+    left: 72%;
+}
+#song-view-main #song-info {
+    width: 380px;
+    background-color: lightgrey;
+    border: solid 1px;
+    margin: 0px 5px 0px 0px;
+    height: 610px
+}
+#song-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#song-info h2 {
+    margin: 10px 0px 0px 20px;
+}
+#song-view-main #graph {
+    width: 556px;
+
+    background-color: lightgrey;
+    border: solid 1px;
+    margin: 0px 0px 0px 5px;
+    height: 610px;
+    text-align: center;
+}
+#graph h2 {
+    margin: 10px 0px 0px 0px;
+}
+#catagories {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#playlist-view-main {
+    display: flex;
+    margin: 10px 9px;
+}
+#playlist-list ul{
+    margin-left: -30px;
+    overflow-y: scroll;
+    height: 391px;
+    list-style: none;
+}
+#playlist-list {
+    width: 20%;
+    min-width: 189px;
+    background-color: lightgrey;
+    margin: 0px 5px 0px 0px;
+    height: 450px;
+}
+#playlist-list h2{
+    margin: 10px 0px 0px 20px;
+}
+#playlist-remove {
+    position: absolute;
+    top: 125px;
+    left: 25%;
+}
+#playlist-content{
+    margin-left: -30px;
+    overflow-y: scroll;
+    height: 369px;
+    list-style: none;
+}
+#playlist {
+    width: 80%;
+    min-width: 756px;
+    background-color: lightgrey;
+    margin: 0px 0px 0px 0px;
+    height: 450px;
+    text-align: center;
+}
+#playlist h2{
+    margin: 10px 0px 0px 0px;
+}
+.hidden {
+    display:none !important;
+}
+.centered {
+    text-align: center;
 }

@@ -5,6 +5,7 @@
     <meta name=”viewport” content=”width=device-width”>
     <link rel="stylesheet" href="styles.css">
     <title>Single-Page App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="artists.json"></script>
     <script src="assign2.js"></script>
     <link rel="stylsheet" href="styles.css">
@@ -13,56 +14,107 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
- <header>
-     <h1>Music Companion</h1>
-     <button>Credits</button>
- </header>
- <div id="wrapper">
-    <main>
-        <aside>
+<div id="blocker" class="hidden"></div>
+<header>
+   <h1>Music Companion</h1>
+   <button id="credits">Credits</button>
+   <button id="save" >Save Playlist Changes</button>
+   <div id="credit-panel" class="hidden">
+   <!-- put my credit contents here-->   
+   </div>
+</header>
+<div id="wrapper">
+   <div id="confirmation" class="popup hidden">
+      <div id="confirmation-text"></div>
+   </div>
+   <div id="duplicate" class="popup hidden">
+      <div id="duplicate-text"></div>
+      <button id="duplicate-ok" class="duplicate-button">Ok</button><button id="duplicate-cancel"class="duplicate-button" button>Cancel</button>
+   </div>
+   <main id="list-view-main">
+      <div id="playlist-panel" class="hidden">
+         <label class="panel-item">
+            Add To Existing
+            <select id="panel-select">
+               <option>-----</option>
+            </select>
+         </label>
+         <hr>
+         <label class="panel-item">
+            Add To New
+            <input id="panel-field">
+         </label>
+         <button id="panel-button" class="panel-item">Create New List</button>
+      </div>
+      <button id="open-playlist"class="header-button">Playlists</button>
+      <aside id="search">
            <h2>Search</h2>
            <div id="search-criteria">
-                <label class="search-label active" id="title"> 
-                   <input type="radio" checked="checked" name="filter">
-                     Title
-                     <input class="search-text hook" type="text">
-                </label>
-                <label class="search-label inactive" id="artist"> 
-                   <input type="radio" name="filter">
-                   Artist
-                   <input class="search-text hook" type="text" disabled>
-                </label>
-                <label class="search-label inactive" id="genre">
-                   <input type="radio" name="filter">
-                   Genre
-                   <input class="search-text hook" type="text"disabled>
-                </label>
-                <label class="bordered-input search-label inactive" id="year"> 
-                   <input type="radio" name="filter">
-                   Year
-                   <label class="param-label">Less<input type="number" class="params hook"disabled></label>
-                   <label class="param-label">Greater<input type="number" class="params hook"disabled></label>
-                </label>
-                <label class="bordered-input search-label inactive" id="popularity"> 
-                   <input type="radio" name="filter">
-                   Popularity
-                   <label class="param-label">Less<input type="number" class="params hook"disabled></label>
-                   <label class="param-label">Greater<input type="number" class="params hook"disabled></label>
-                </label>
-                <div id="button-container">
-                    <button id="clear">Clear</button>
-                    <button id="search">Search</button>
-                </div>
+               <label class="search-label active" id="title"> 
+                  <input type="radio" checked="checked" name="filter">
+                    Title
+                    <input class="search-text hook" type="text">
+               </label>
+               <label class="search-label inactive" id="artist"> 
+                  <input type="radio" name="filter">
+                  Artist
+                  <input class="search-text hook" type="text" disabled>
+               </label>
+               <label class="search-label inactive " id="genre">
+                  <input type="radio" name="filter">
+                  Genre
+                  <input class="search-text hook" type="text"disabled>
+               </label>
+               <label class="bordered-input search-label inactive" id="year"> 
+                  <input type="radio" name="filter">
+                  Year
+                  <label class="param-label">Less<input type="number" class="params hook"disabled></label>
+                  <label class="param-label">Greater<input type="number" class="params hook"disabled></label>
+               </label>
+               <label class="bordered-input search-label inactive" id="popularity"> 
+                  <input type="radio" name="filter">
+                  Popularity
+                  <label class="param-label">Less<input type="number" class="params hook"disabled></label>
+                  <label class="param-label">Greater<input type="number" class="params hook"disabled></label>
+               </label>
+               <div id="button-container">
+                   <button id="clear">Clear</button>
+                   <button id="search-button">Search</button>
+               </div>
            </div>
         </aside>
-        <section>
-           <h2>Results</h2>
-           <ul>
-            <li><label id="title"><div id="first-cell" class="arrow"></div>Title</label><label id="artist"><div class="arrow remaining-cells"></div>Artist</label><label id="year"><div class="arrow remaining-cells"></div>Year</label><label id="genre"><div class="arrow remaining-cells"></div>Genre</label><label id="popularity"><div class="arrow remaining-cells"></div>Popularity</label></li>
-           </ul>
+        <section id="results">
+           <h2 id="result-header">Results</h2>
+           <div id="list-header"><label id="title"><div class="arrow"></div>Title</label><label id="artist"><div class="arrow"></div>Artist</label><label id="year"><div class="arrow"></div>Year</label><label id="genre"><div class="arrow"></div>Genre</label><label id="popularity"><div class="arrow"></div>Popularity</label></div>
+           <ul id="result-list"></ul>
         </section>
-    </main>
-    <footer>Sean Jamieson &copy</footer>
+   </main>
+   <main id="song-view-main" class="hidden">
+      <button id="close-song"class="header-button">Close View</button>
+      <aside id="song-info">
+         <h2>Song Information</h2>
+         <ul id="info-list"></ul>
+         <figure id="catagories"></figure>
+      </aside>
+      <section id="graph">
+         <h2>Radar Chart</h2>
+         <canvas id="myChart"></canvas>
+      </section>
+   </main>
+   <main id="playlist-view-main" class="hidden">
+      <button id="close-playlist"class="header-button">Close View</button>
+      <aside id="playlist-list">
+         <h2>PlayList's</h2>
+         <ul></ul>
+      </aside>
+      <section id=playlist>
+         <h2>Playlist</h2>
+         <button id="playlist-remove">Remove Playlist</button>
+         <div id="list-header"><label id="title">Title</label><label id="artist">Artist</label><label id="year">Year</label><label id="genre">Genre</label><label id="popularity">Popularity</label></div>
+         <ul id="playlist-content"></ul>
+      </section>
+   </main>
+   <footer>Sean Jamieson &copy</footer>
 </div>   
 </body>
 </html>
