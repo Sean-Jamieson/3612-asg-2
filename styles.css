@@ -1,5 +1,6 @@
 body {
     font-family: 'Kelly Slab', cursive;
+    overflow-x: hidden;
 }
 header {
     position:relative;
@@ -9,7 +10,7 @@ header {
     border-width: 1px;
     border-radius: 7px;
     height: 90px;
-    min-width:947px;
+    min-width:907px;
 }
 header h1 {
     font-family: 'Condiment', cursive;
@@ -40,22 +41,34 @@ Then slightly changed
 */ 
 ::-webkit-scrollbar {
   width: 15px;
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background: #888; 
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
 /*End borrowed code*/
+.move-in {
+    transform: translateY(400px);
+    transition: transform .5s ease-in-out;
+}
+.move-out {
+    transform: translateY(-400px);
+    transition: transform .5s ease-in-out;
+}
 .popup {
     margin-left: -150px;
     background: slategrey;
-    border: groove 2px darkslategray;
+    border: groove 3px darkslategray;
+    border-radius: 5px;
     position: absolute;    
     top: 15px;
     left: 50%;
@@ -109,9 +122,9 @@ Then slightly changed
     border-radius: 5px;
     width: 230px;
     position: absolute; 
-    top: 30px;
-    left: 75%;
-    z-index: 99;
+    top: -370px;
+    left: 72%;
+    z-index: 999;
     font-size: 20px;
 }
 #list-view-main {
@@ -129,10 +142,11 @@ Then slightly changed
     margin: 15px 1% 5px 1%;
     background-color: lightgrey;
     border: solid;
+    border-radius: 5px;
     border-width: 1px;
     text-align: left;
     min-width: 255px;
-    height: 464px;
+    height: 467px;
 }
 input[type="radio"] {
     display:inline-block
@@ -215,10 +229,11 @@ margin-top: -3px;
     grid-column-start: 2;
     grid-column-end: 6; 
     text-align: center;
+    border: solid 1px;
+    border-radius: 5px;
     width: calc(100vw - 255px);
-    height: 450px;
-    min-width: 675px;
-    /*set min-width once we know list width*/
+    height: 476px;
+    min-width: 635px;
 }
 #result-header {
     font-family: 'Condiment', cursive;
@@ -230,9 +245,11 @@ margin-top: -3px;
     padding: 0px 0px 0px 10px;
     margin-left: 0px;
     background-color:  lightsteelblue;
+    border-radius: 5px;
     overflow-y: scroll;
     height: 359px;
     list-style: none;
+    padding-top: 5px;
 }
 #result-list li, #list-header, #playlist li{
     text-align: left;
@@ -251,6 +268,7 @@ margin-top: -3px;
     position: absolute;
     background-color: lightgrey;
     border: solid 1px;
+    border-radius: 5px;
     width: 200px;
     
 }
@@ -302,7 +320,7 @@ It is old I know
 
 #song-view-main {
     display: flex;
-    margin: 10px 9px;
+    margin: 15px 9px;
 }
 .header-button {
     position: absolute;
@@ -316,7 +334,8 @@ It is old I know
     min-width: 350px;
     background-color: lightgrey;
     border: solid 1px;
-    margin: 0px 5px 0px 0px;
+    border-radius: 5px;
+    margin: 0px 1% 0px 0px;
     height: 610px
 }
 #song-info {
@@ -333,13 +352,14 @@ It is old I know
     width: calc(100vw);
     background-color: lightgrey;
     border: solid 1px;
-    margin: 0px 0px 0px 5px;
+    border-radius: 5px;
+    margin: 0px;
     height: 610px;
     text-align: center;
 }
 #chart-container {
-    width: 556px;
-    margin-left: 50px;
+    width: 546px;
+    margin: 0px;
 }
 #graph h2 {
     margin: 10px 0px 0px 250px;
@@ -354,7 +374,7 @@ It is old I know
 }
 #playlist-view-main {
     display: flex;
-    margin: 10px 9px;
+    margin: 15px 9px;
 }
 #playlist-list ul{
     margin-left: -30px;
@@ -366,7 +386,9 @@ It is old I know
     width: 19%;
     min-width: 189px;
     background-color: lightgrey;
-    margin: 0px 0px 0px 0px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 0px 1% 0px 0px;
     height: 469px;
 }
 
@@ -397,7 +419,7 @@ margin: 25px 0px 0px 0px;
 #playlist-title {
     margin: -10px 0px 0px 0px;
 }
-palylist #stats{
+playlist #stats{
     text-align: left;
     display: block;
     margin: 15px 0px 0px 0px;
@@ -424,9 +446,11 @@ palylist #stats{
 }
 #playlist {
     width: 80%;
-    min-width: 756px;
+    min-width: 697px;
     background-color: lightgrey;
-    margin: 0px 0px 0px 20px;
+    margin: 0px;
+    border: 1px solid;
+    border-radius: 5px;
     height: 469px;
     text-align: center;
 }

@@ -209,9 +209,19 @@ function mainLogic(){
    };
    creditButton.addEventListener("click", (e) => {
       creditPanel.classList.remove("hidden");
+      setTimeout(() => {
+         creditPanel.classList.add("move-in");
+      },200);
+      creditPanel.classList.remove("move-in");
+      blocker.classList.remove("hidden");
    });
    exitCredits.addEventListener("click", (e) => {
-      creditPanel.classList.add("hidden");
+      creditPanel.classList.add("move-out");
+      setTimeout(() => {
+         creditPanel.classList.add("hidden");
+         blocker.classList.add("hidden");
+         creditPanel.classList.remove("move-out");
+      }, 200);
    });
    searchCriteria.addEventListener("keypress", (e) =>{
       if(e.key === "Enter") {
@@ -317,7 +327,14 @@ function mainLogic(){
          localStorage.setItem("playlists", JSON.stringify(playlists));
          confirmationText.textContent = `Adding "${songName}" to "${playlistMatch.name}.`
          confirmation.classList.remove("hidden");
-         setTimeout(()=>{confirmation.classList.add("hidden")},2000);
+         setTimeout(() =>{
+            confirmation.classList.add("move-in");
+         },200);
+         confirmation.classList.remove("move-in");
+         setTimeout(() =>{
+            confirmation.classList.add("move-out");
+         },1200);
+         setTimeout(() =>{confirmation.classList.add("hidden")},2000);
       }       
       playlistPanel.classList.add("hidden");
       
