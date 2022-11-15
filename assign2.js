@@ -2,7 +2,7 @@
 
 
 /* url of song api --- https versions hopefully a little later this semester 	*/
-const api = 'http://www.randyconnolly.com/funwebdev/3rd/api/music/songs-nested.php';
+const api = 'https://www.randyconnolly.com/funwebdev/3rd/api/music/songs-nested.php';
 
  
 
@@ -26,7 +26,6 @@ addEventListener("DOMContentLoaded", ()=>{
    }
 
 function mainLogic(){
-   const save = document.querySelector("#save");
    const confirmation = document.querySelector("#confirmation");
    const confirmationText = document.querySelector("#confirmation-text");
    const duplicate = document.querySelector("#duplicate");
@@ -39,6 +38,7 @@ function mainLogic(){
    const playlistView = document.querySelector("#playlist-view-main");
    const searchButton = document.querySelector("#search-button");
    const clearButton = document.querySelector("#clear");
+   const titleRadio = document.querySelector("#title-radio")
    const closeSong = document.querySelector("#close-song");
    const closePlaylist = document.querySelector("#close-playlist");
    const openPlaylist = document.querySelector("#open-playlist");
@@ -51,11 +51,15 @@ function mainLogic(){
    const panelButton = document.querySelector("#panel-button");
    const panelField = document.querySelector("#panel-field");
    const panelSelect = document.querySelector("#panel-select")
-   const playlistContainer = document.querySelector("#playlist");
    const resultList = document.querySelector("#result-list");
-   const playlistList = document.querySelector("#playlist-list")
+   const playlistTitle = document.querySelector("#playlist-title");
+   const songCount = document.querySelector("#song-count");
+   const avgPopularity = document.querySelector("#avg-popularity");
    const playlistListContent = document.querySelector("#playlist-list ul");
    const playlistContent = document.querySelector("#playlist-content");
+   const creditButton = document.querySelector("#credits");
+   const exitCredits = document.querySelector("#exit-credits")
+   const creditPanel = document.querySelector("#credit-panel");
    let songs = JSON.parse(localStorage.getItem("songList"));
    let playlists = [];
    if(localStorage.getItem("playlists")){
@@ -72,9 +76,9 @@ function mainLogic(){
    const data = {
       labels: labels,
       datasets: [{
-         label:   `yes`,
-         backgroundColor: 'rgb(255, 99, 132)',
-         borderColor: 'rgb(255, 99, 132)',
+         label:  '',
+         backgroundColor: 'rgb(83, 184, 153)',
+         borderColor: 'rgb(83, 184, 153)',
          fill: false,
          tension: .3,
          data: [0,0,0,0,0,0],
@@ -83,12 +87,21 @@ function mainLogic(){
    const config = {
       type: 'radar',
       data: data,
-      options: {}
+      options: {
+         scale: {
+            pointLabels: {
+              fontSize: 30
+            },
+          },
+      },
    };
    const myChart = new Chart(
       document.getElementById('myChart'),
       config
    );
+   Chart.defaults.font.size = 15;
+   Chart.defaults.font.family = 'Kelly Slab';
+
    renderResults(songs);
    function renderResults(songs){
       resultList.innerHTML="";
@@ -141,51 +154,63 @@ function mainLogic(){
       }
    };
    function populatePlaylist(index) {
+      let count = 0;
+      let popularitySum = 0
+      console.log(playlists);
       playlistContent.innerHTML = "";
+      songCount.textContent = "";
+      avgPopularity.textContent = "";
       if(playlists[0]!=null){
-      for(let songId of playlists[index].songs){
-         const match = songs.find(song => song.song_id == songId);
-         const li = document.createElement("li");
-         const title = document.createElement("div");
-         const artist = document.createElement("div");
-         const year = document.createElement("div");
-         const genre = document.createElement("div");
-         const popularity = document.createElement("div");
-         const flexContainer = document.createElement("div");
-         const button = document.createElement("button");
-         const hr = document.createElement("hr");
-         title.textContent = match.title;
-         title.classList.add("playlist-title")
-         li.appendChild(title);
-         artist.textContent = match.artist.name;
-         li.appendChild(artist);
-         year.textContent = match.year
-         year.classList.add("centered");
-         li.appendChild(year);
-         genre.textContent = match.genre.name;
-         genre.classList.add("centered");
-         li.appendChild(genre);
-         popularity.textContent = match.details.popularity;
-         popularity.classList.add("centered");
-         li.appendChild(popularity);
-         flexContainer.classList.add("remove-container");
-         button.textContent = "remove";
-         button.classList.add("playlist-button");
-         flexContainer.appendChild(button);
-         li.appendChild(flexContainer);
-         li.classList.add("playlist-item");
-         li.dataset.id = match.song_id;
-         playlistContent.parentElement.dataset.index = index;
-         playlistContent.appendChild(li);
-         playlistContent.appendChild(hr);
+         playlistContent.dataset.index = index;
+         playlistTitle.textContent = playlists[index].name
+         for(let songId of playlists[index].songs){
+            const match = songs.find(song => song.song_id == songId);
+            const li = document.createElement("li");
+            const title = document.createElement("div");
+            const artist = document.createElement("div");
+            const year = document.createElement("div");
+            const genre = document.createElement("div");
+            const popularity = document.createElement("div");
+            const flexContainer = document.createElement("div");
+            const button = document.createElement("button");
+            const hr = document.createElement("hr");
+            title.textContent = match.title;
+            title.classList.add("playlist-title")
+            li.appendChild(title);
+            artist.textContent = match.artist.name;
+            li.appendChild(artist);
+            year.textContent = match.year
+            year.classList.add("centered");
+            li.appendChild(year);
+            genre.textContent = match.genre.name;
+            genre.classList.add("centered");
+            li.appendChild(genre);
+            popularity.textContent = match.details.popularity;
+            popularity.classList.add("centered");
+            li.appendChild(popularity);
+            flexContainer.classList.add("remove-container");
+            button.textContent = "remove";
+            button.classList.add("playlist-button");
+            flexContainer.appendChild(button);
+            li.appendChild(flexContainer);
+            li.classList.add("playlist-item");
+            li.dataset.id = match.song_id;
+            playlistContent.parentElement.dataset.index = index;
+            playlistContent.appendChild(li);
+            playlistContent.appendChild(hr);
+            popularitySum = popularitySum + match.details.popularity;
+            count++;
+         }
+         songCount.textContent = `${count}`;
+         let average = popularitySum/count;
+         avgPopularity.textContent = `${average.toFixed(1)}`;
       }
-   }
    };
-   save.addEventListener("click", (e) =>{
-      localStorage.setItem("playlists", JSON.stringify(playlists));
-      confirmationText.textContent = `Playlist(s) saved.`
-      confirmation.classList.remove("hidden");
-      setTimeout(()=>{confirmation.classList.add("hidden")},2000);
+   creditButton.addEventListener("click", (e) => {
+      creditPanel.classList.remove("hidden");
+   });
+   exitCredits.addEventListener("click", (e) => {
+      creditPanel.classList.add("hidden");
    });
    searchCriteria.addEventListener("keypress", (e) =>{
       if(e.key === "Enter") {
@@ -211,24 +236,39 @@ function mainLogic(){
       } else if (filterInputs[0].value.length > 0 && filterInputs[0].parentElement.id =="genre"){
          songs = songs.filter(song => song.genre.name.toString().startsWith(filterInputs[0].value));
          renderResults(songs);
-      } else if (filterInputs[0].value.length > 0 && filterInputs[1].value.length > 0  && filterInputs[0].parentElement.parentElement.id =="year"){
+      } else if (filterInputs[0].value.length > 0 && filterInputs[1].value.length > 0  && filterInputs[0].parentElement.parentElement.id =="year"){  
          songs = songs.filter(song => song.year < filterInputs[0].value && song.year > filterInputs[1].value);
+         renderResults(songs);
+      } else if (filterInputs[0].value.length > 0 &&filterInputs[0].parentElement.parentElement.id =="year") {
+         songs = songs.filter(song => song.year < filterInputs[0].value);
+         renderResults(songs);
+      } else if (filterInputs[1].value.length > 0  && filterInputs[0].parentElement.parentElement.id =="year") {
+         songs = songs.filter(song => song.year > filterInputs[1].value);
          renderResults(songs);
       } else if (filterInputs[0].value.length > 0 && filterInputs[1].value.length > 0  && filterInputs[0].parentElement.parentElement.id =="popularity"){
          songs = songs.filter(song => song.details.popularity < filterInputs[0].value && song.details.popularity > filterInputs[1].value);
+         renderResults(songs);
+      } else if (filterInputs[0].value.length > 0 && filterInputs[0].parentElement.parentElement.id =="popularity"){
+         songs = songs.filter(song => song.details.popularity < filterInputs[0].value );
+         renderResults(songs);
+      } else if (filterInputs[1].value.length > 0  && filterInputs[0].parentElement.parentElement.id =="popularity"){
+         songs = songs.filter(song => song.details.popularity > filterInputs[1].value);
          renderResults(songs);
       }
    });
    clearButton.addEventListener("click", () => {
       songs = JSON.parse(localStorage.getItem("songList"))
       renderResults(songs);
+      titleRadio.checked = "checked";
+      disableAll();
+      enable("#title");
    });
    document.addEventListener("click", (e)=>{
       if(!playlistPanel.contains(e.target) && !e.target.classList.contains("result-button")){
          playlistPanel.classList.add("hidden");
       }
    });
-   //playlist panel pop-up event
+   //playlist panel pop-up event and title navigation to song page
    resultList.addEventListener("click", (e) =>{
       if(e.target.classList.contains("result-button")){
          let x = e.clientX;
@@ -244,6 +284,14 @@ function mainLogic(){
             option.textContent = playlist.name
             panelSelect.appendChild(option);
          }
+      } else if (e.target.classList.contains("result-title")) {
+         const id = e.target.parentElement.dataset.id;
+         match = songs.find(song => song.song_id == id);
+         listView.classList.toggle("hidden");
+         songview.classList.toggle("hidden");
+         populateInfo(match);
+         populateCatagories(match);
+         drawGraph(match);
       }
    });
    duplicateCancel.addEventListener("click", (e)=>{
@@ -259,11 +307,13 @@ function mainLogic(){
          duplicateText.textContent = `"${songName}" is already in "${playlistMatch.name}". Are you Sure?`;
          duplicateOk.addEventListener("click", (e)=>{
             playlistMatch.songs.push(playlistPanel.dataset.id);
+            localStorage.setItem("playlists", JSON.stringify(playlists));
             duplicate.classList.add("hidden");
             blocker.classList.add("hidden");
          });
       } else {
          playlistMatch.songs.push(playlistPanel.dataset.id);
+         localStorage.setItem("playlists", JSON.stringify(playlists));
          confirmationText.textContent = `Adding "${songName}" to "${playlistMatch.name}.`
          confirmation.classList.remove("hidden");
          setTimeout(()=>{confirmation.classList.add("hidden")},2000);
@@ -279,6 +329,7 @@ function mainLogic(){
                name: panelField.value,
                songs: [playlistPanel.dataset.id],
             })
+            localStorage.setItem("playlists", JSON.stringify(playlists));
             confirmationText.textContent = `Created "${panelField.value}" with "${songName}."`
             confirmation.classList.remove("hidden");
             setTimeout(()=>{confirmation.classList.add("hidden")},2000);
@@ -308,17 +359,25 @@ function mainLogic(){
       }
    });
    playlistRemove.addEventListener("click", (e) =>{
-      playlists.splice(e.target.parentElement.dataset.index, 1);
+      playlists.splice(e.target.parentElement.parentElement.parentElement.dataset.index, 1);
+      localStorage.setItem("playlists", JSON.stringify(playlists));
       populatePlaylists();
-      populatePlaylist(e.target.parentElement.dataset.index - 1);
-      console.log(playlists);
+      populatePlaylist(0);
    });
    playlistContent.addEventListener("click", (e) =>{
       if(e.target.classList.contains("playlist-button")){
-         console.log(e.target.dataset.id);
          const index = playlists[e.target.parentElement.parentElement.parentElement.dataset.index].songs.indexOf(e.target.parentElement.parentElement.dataset.id);
          playlists[e.target.parentElement.parentElement.parentElement.dataset.index].songs.splice(index,1);
          populatePlaylist(e.target.parentElement.parentElement.parentElement.dataset.index);
+         localStorage.setItem("playlists", JSON.stringify(playlists));
+      } else if (e.target.classList.contains("playlist-title")) {
+         const id = e.target.parentElement.dataset.id;
+         match = songs.find(song => song.song_id == id);
+         playlistView.classList.toggle("hidden");
+         songview.classList.toggle("hidden");
+         populateInfo(match);
+         populateCatagories(match);
+         drawGraph(match);
       }
    });
    playlistPanel.addEventListener("keypress", (e) =>{
@@ -341,19 +400,6 @@ function mainLogic(){
       listView.classList.toggle("hidden");
       populatePlaylists();
       populatePlaylist(0);
-      playlistContent.dataset.index = "0";
-   });
-   //navigate to song page
-   resultList.addEventListener("click", (e) => {
-      if(e.target.classList.contains("result-title")){
-         const id = e.target.parentElement.dataset.id;
-         match = songs.find(song => song.song_id == id);
-         listView.classList.toggle("hidden");
-         songview.classList.toggle("hidden");
-         populateInfo(match);
-         populateCatagories(match);
-         drawGraph(match);
-      }
    });
    function populateInfo(song){
       const title = document.createElement("div");
@@ -402,6 +448,7 @@ function mainLogic(){
    }
    function drawGraph(song) {
       myChart.data.datasets[0].data = [song.analytics.danceability, song.analytics.energy, song.analytics.speechiness, song.analytics.acousticness, song.analytics.liveness, song.analytics.valence];
+      myChart.data.datasets[0].label = `${song.title}`;
       myChart.update();
    }
    //filter by heading

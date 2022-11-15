@@ -1,5 +1,5 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Kelly Slab', cursive;
 }
 header {
     position:relative;
@@ -7,11 +7,15 @@ header {
     background-color: lightgrey;
     border: solid;
     border-width: 1px;
+    border-radius: 7px;
     height: 90px;
     min-width:947px;
 }
 header h1 {
-    text-align: center;
+    font-family: 'Condiment', cursive;
+    text-align: left;
+    margin: 15px 0px 0px 75px;
+    font-size: 45px;
 }
 select {
     width: 60px
@@ -21,6 +25,13 @@ hr {
 }
 footer {
     text-align: center;
+}
+hr {
+    margin-bottom: 5px;
+}
+button{
+    font-family: 'Kelly Slab', cursive;
+    font-weight: bold;
 }
 /*
 Scroll bar styling borrowed from:
@@ -53,6 +64,9 @@ Then slightly changed
     text-align: center;
     z-index: 999;
 }
+.bold {
+    font-weight: bold;
+}
 #blocker {
     position: absolute;
     left: 0;
@@ -81,13 +95,24 @@ Then slightly changed
     top: 30px;
     left: 86%;
 }
-#save {
-    position: absolute;
-    margin: 0px;
-    width: 150px;
-    height: 30px;
+#exit-credits {
+    display: inline-block;
+    margin: 0px 0px 0px 143px;
+    font-weight: normal;
+    color: darkred;
+    cursor: pointer;
+}
+#credit-panel {
+    padding: 8px;
+    background-color: lightgrey;
+    border: groove 2px darkslategray;
+    border-radius: 5px;
+    width: 230px;
+    position: absolute; 
     top: 30px;
-    right: 80%;
+    left: 75%;
+    z-index: 99;
+    font-size: 20px;
 }
 #list-view-main {
     display: flex;
@@ -98,16 +123,16 @@ Then slightly changed
     flex-direction: column;
     justify-content: space-between;
 }
-#list-view-main #search {
+#search {
     font-weight: bold;
     padding: 4px;
     margin: 15px 1% 5px 1%;
     background-color: lightgrey;
     border: solid;
     border-width: 1px;
-    text-align: center;
+    text-align: left;
     min-width: 255px;
-    height: 440px;
+    height: 464px;
 }
 input[type="radio"] {
     display:inline-block
@@ -122,6 +147,14 @@ input[type="radio"] {
     display: block;
     text-align: left;
     margin: 0px 0px 18px 5px;
+}
+#search h2{
+    font-family: 'Condiment', cursive;
+    margin: 10px 0px 0px 25px;
+    font-size: 30px;
+}
+#search-criteria {
+    margin-top: 20px;
 }
 #search-criteria  .param-label{
     display: block;
@@ -169,6 +202,7 @@ margin-top: -3px;
     display: flex;
     justify-content: space-between;
     padding: 0px 10px; 
+    margin-top: 35px;
 }
 #button-container button{
     margin: 0px;
@@ -187,8 +221,10 @@ margin-top: -3px;
     /*set min-width once we know list width*/
 }
 #result-header {
-    margin: 10px 0px;
-    font-weight: bold;
+    font-family: 'Condiment', cursive;
+    font-size: 30px;
+    text-align: left;
+    margin: 15px 0px 5px 35px;
 }
 #results #result-list{
     padding: 0px 0px 0px 10px;
@@ -198,7 +234,7 @@ margin-top: -3px;
     height: 359px;
     list-style: none;
 }
-#results #result-list li, #list-header, #playlist li{
+#result-list li, #list-header, #playlist li{
     text-align: left;
     display: grid;
     grid-template-columns: 4fr 2fr 1fr 2fr 2fr 1fr; 
@@ -208,6 +244,7 @@ margin-top: -3px;
     cursor: pointer;
 }
 #list-header {
+    margin-top: 10px;
     font-weight: bold;
 }
 #playlist-panel {
@@ -276,7 +313,7 @@ It is old I know
     left: 72%;
 }
 #song-view-main #song-info {
-    width: 380px;
+    min-width: 350px;
     background-color: lightgrey;
     border: solid 1px;
     margin: 0px 5px 0px 0px;
@@ -289,18 +326,26 @@ It is old I know
 }
 #song-info h2 {
     margin: 10px 0px 0px 20px;
+    font-family: 'Condiment', cursive;
+    font-size: 30px;
 }
 #song-view-main #graph {
-    width: 556px;
-
+    width: calc(100vw);
     background-color: lightgrey;
     border: solid 1px;
     margin: 0px 0px 0px 5px;
     height: 610px;
     text-align: center;
 }
+#chart-container {
+    width: 556px;
+    margin-left: 50px;
+}
 #graph h2 {
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0px 0px 250px;
+    font-family: 'Condiment', cursive;
+    font-size: 30px;
+    text-align: left;
 }
 #catagories {
     margin-top: auto;
@@ -318,32 +363,71 @@ It is old I know
     list-style: none;
 }
 #playlist-list {
-    width: 20%;
+    width: 19%;
     min-width: 189px;
     background-color: lightgrey;
-    margin: 0px 5px 0px 0px;
-    height: 450px;
+    margin: 0px 0px 0px 0px;
+    height: 469px;
 }
+
 #playlist-list h2{
-    margin: 10px 0px 0px 20px;
+    font-family: 'Condiment', cursive;
+    margin: 10px 0px 0px 25px;
+    font-size: 30px;
+    margin: 17px 0px 0px 20px;
+}
+#playlist-head-wrapper {
+   display: grid;
+   grid-template-columns: repeat(3,1fr); 
+   margin: 0px 0px 0px 0px;
 }
 #playlist-remove {
-    position: absolute;
-    top: 125px;
-    left: 25%;
+margin: 25px 0px 0px 0px;
+}
+#playlist-header {
+    margin: 0px 0px 0px 20px;
+    text-align: left;
+    font-family: 'Condiment', cursive;
+    margin: 10px 0px 0px 25px;
+    font-size: 20px;
+}
+#playlist-header h3 {
+    margin-left: 35px;
+}
+#playlist-title {
+    margin: -10px 0px 0px 0px;
+}
+palylist #stats{
+    text-align: left;
+    display: block;
+    margin: 15px 0px 0px 0px;
+}
+#stats div{
+    display: inline-block;
+    text-align: left;
+}
+#song-count {
+    margin: 0px 0px 0px 115px;
+    text-align: left;
+}
+#avg-popularity {
+    margin: 0px 0px 0px 20px;
 }
 #playlist-content{
     margin-left: -30px;
     overflow-y: scroll;
-    height: 369px;
+    height: 326px;
     list-style: none;
+}
+#song-count-container {
+    margin: 25px 0px 0px -14px;
 }
 #playlist {
     width: 80%;
     min-width: 756px;
     background-color: lightgrey;
-    margin: 0px 0px 0px 0px;
-    height: 450px;
+    margin: 0px 0px 0px 20px;
+    height: 469px;
     text-align: center;
 }
 #playlist h2{

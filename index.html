@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset=”utf-8">
-    <meta name=”viewport” content=”width=device-width”>
-    <link rel="stylesheet" href="styles.css">
-    <title>Single-Page App</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="artists.json"></script>
-    <script src="assign2.js"></script>
-    <link rel="stylsheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+   <meta charset=”utf-8">
+   <meta name=”viewport” content=”width=device-width”>
+   <link rel="stylesheet" href="styles.css">
+   <title>Single-Page App</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="artists.json"></script>
+   <script src="assign2.js"></script>
+   <link rel="stylsheet" href="styles.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Condiment&family=Kelly+Slab&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="blocker" class="hidden"></div>
 <header>
    <h1>Music Companion</h1>
    <button id="credits">Credits</button>
-   <button id="save" >Save Playlist Changes</button>
    <div id="credit-panel" class="hidden">
-   <!-- put my credit contents here-->   
+   <div><div class="bold">Creator: <div id="exit-credits">X</div></div>Sean Jamieson</div>
+   <div><div class="bold">GitHub: </div> <a href="https://github.com/Sean-Jamieson/3612-asg-2">sean-jamieson</a></div>
+   <div><div class="bold">Portfolio: </div> <a href="https://seanjamieson.zyx">https://seanjamieson.zyx</a></div> 
    </div>
 </header>
 <div id="wrapper">
@@ -49,9 +51,10 @@
       <button id="open-playlist"class="header-button">Playlists</button>
       <aside id="search">
            <h2>Search</h2>
+           <hr>
            <div id="search-criteria">
                <label class="search-label active" id="title"> 
-                  <input type="radio" checked="checked" name="filter">
+                  <input id="title-radio" type="radio" checked="checked" name="filter">
                     Title
                     <input class="search-text hook" type="text">
                </label>
@@ -85,7 +88,8 @@
         </aside>
         <section id="results">
            <h2 id="result-header">Results</h2>
-           <div id="list-header"><label id="title"><div class="arrow"></div>Title</label><label id="artist"><div class="arrow"></div>Artist</label><label id="year"><div class="arrow"></div>Year</label><label id="genre"><div class="arrow"></div>Genre</label><label id="popularity"><div class="arrow"></div>Popularity</label></div>
+           <hr>
+           <div id="list-header"><label><div class="arrow"></div>Title</label><label id="artist"><div class="arrow"></div>Artist</label><label id="year"><div class="arrow"></div>Year</label><label id="genre"><div class="arrow"></div>Genre</label><label id="popularity"><div class="arrow"></div>Popularity</label></div>
            <ul id="result-list"></ul>
         </section>
    </main>
@@ -98,7 +102,9 @@
       </aside>
       <section id="graph">
          <h2>Radar Chart</h2>
+         <div id="chart-container">
          <canvas id="myChart"></canvas>
+         </div>
       </section>
    </main>
    <main id="playlist-view-main" class="hidden">
@@ -108,8 +114,20 @@
          <ul></ul>
       </aside>
       <section id=playlist>
-         <h2>Playlist</h2>
-         <button id="playlist-remove">Remove Playlist</button>
+         <div id="playlist-head-wrapper">
+         <div id="playlist-header">
+            <h2>Playlist</h2>
+            <h3 id="playlist-title"></h3>
+         </div>
+         <div id="playlist-remove-container">
+            <button id="playlist-remove">Remove Playlist</button>
+         </div>
+         <div id="stats">
+            <div id="song-count-container">Songs: <div id="song-count"></div></div>
+            <div>Average Popularity: <div id="avg-popularity"></div></div>
+         </div>
+         </div>
+         <hr>
          <div id="list-header"><label id="title">Title</label><label id="artist">Artist</label><label id="year">Year</label><label id="genre">Genre</label><label id="popularity">Popularity</label></div>
          <ul id="playlist-content"></ul>
       </section>
