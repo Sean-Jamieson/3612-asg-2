@@ -2,7 +2,7 @@
     --header: #567D89;
     --box: #567D89;
     --list: #709F9D;
-    --font: #DEC584;
+    --font: #ebd190;
     --button: #A16B56;
     --buttonHover: #E0A370;
 }
@@ -276,7 +276,7 @@ margin-top: -3px;
     grid-template-columns: 4fr 2fr 1fr 2fr 2fr 1fr; 
 }
 .result-title,.playlist-title,.playlist-name{
-    color: #E0A370;
+    color: #ffca95;
     cursor: pointer;
 }
 #list-header {
@@ -369,7 +369,7 @@ It is old I know
 }
 #song-view-main #graph {
     width: calc(100vw);
-    background-color: var(--box);
+    background-color: var(--list);
     border: solid 1px;
     border-radius: 5px;
     margin: 0px;
@@ -378,10 +378,13 @@ It is old I know
 }
 #chart-container {
     width: 546px;
+    height: 550px;
     margin: 0px;
+    background-color: var(--box);
+    border-radius: 5px;
 }
 #graph h2 {
-    margin: 10px 0px 0px 250px;
+    margin: 15px 0px 0px 30px;
     font-family: 'Condiment', cursive;
     font-size: 30px;
     text-align: left;
