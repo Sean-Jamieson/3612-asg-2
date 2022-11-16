@@ -90,8 +90,11 @@ function mainLogic(){
       data: data,
       options: {
          scale: {
+            gridLines: {
+               color: 'white',
+            },
             pointLabels: {
-              fontSize: 30
+              fontSize: 30,
             },
           },
       },
@@ -100,6 +103,7 @@ function mainLogic(){
       document.getElementById('myChart'),
       config
    );
+   Chart.defaults.font.color = '#DEC584'
    Chart.defaults.font.size = 15;
    Chart.defaults.font.family = 'Kelly Slab';
 
@@ -314,12 +318,20 @@ function mainLogic(){
       const playlistMatch = playlists.find(playlist => playlist.name == e.target.value);
       if(playlistMatch.songs.includes(playlistPanel.dataset.id)){
          duplicate.classList.remove("hidden");
+         duplicate.classList.remove("move-out");
          blocker.classList.remove("hidden");
+         setTimeout(() =>{
+            duplicate.classList.add("move-in");
+         },200);
          duplicateText.textContent = `"${songName}" is already in "${playlistMatch.name}". Are you Sure?`;
          duplicateOk.addEventListener("click", (e)=>{
             playlistMatch.songs.push(playlistPanel.dataset.id);
             localStorage.setItem("playlists", JSON.stringify(playlists));
-            duplicate.classList.add("hidden");
+            setTimeout(() =>{
+               duplicate.classList.add("move-out");
+            },100);
+            setTimeout(() =>{duplicate.classList.add("hidden")},200);
+            duplicate.classList.remove("move-in");
             blocker.classList.add("hidden");
          });
       } else {
@@ -333,8 +345,9 @@ function mainLogic(){
          confirmation.classList.remove("move-in");
          setTimeout(() =>{
             confirmation.classList.add("move-out");
-         },1200);
-         setTimeout(() =>{confirmation.classList.add("hidden")},2000);
+         },1800);
+         confirmation.classList.remove("move-out");
+         setTimeout(() =>{confirmation.classList.add("hidden")},2200);
       }       
       playlistPanel.classList.add("hidden");
       
@@ -350,11 +363,27 @@ function mainLogic(){
             localStorage.setItem("playlists", JSON.stringify(playlists));
             confirmationText.textContent = `Created "${panelField.value}" with "${songName}."`
             confirmation.classList.remove("hidden");
-            setTimeout(()=>{confirmation.classList.add("hidden")},2000);
+            setTimeout(() =>{
+               confirmation.classList.add("move-in");
+            },200);
+            confirmation.classList.remove("move-in");
+            setTimeout(() =>{
+               confirmation.classList.add("move-out");
+            },2200);
+            confirmation.classList.remove("move-out");
+            setTimeout(() =>{confirmation.classList.add("hidden")},2300);
          } else {
             confirmationText.textContent = `"${panelField.value}" Already exists.`
             confirmation.classList.remove("hidden");
-            setTimeout(()=>{confirmation.classList.add("hidden")},2000);
+            setTimeout(() =>{
+               confirmation.classList.add("move-in");
+            },200);
+            confirmation.classList.remove("move-in");
+            setTimeout(() =>{
+               confirmation.classList.add("move-out");
+            },2200);
+            confirmation.classList.remove("move-out");
+            setTimeout(() =>{confirmation.classList.add("hidden")},2300);
          }
          playlistPanel.classList.add("hidden");
       }
@@ -377,7 +406,18 @@ function mainLogic(){
       }
    });
    playlistRemove.addEventListener("click", (e) =>{
+      confirmation.textContent = `The playlist "${playlists[e.target.parentElement.parentElement.parentElement.dataset.index].name}" has been removed`;
       playlists.splice(e.target.parentElement.parentElement.parentElement.dataset.index, 1);
+      confirmation.classList.remove("hidden");
+      setTimeout(() =>{
+         confirmation.classList.add("move-in");
+      },200);
+      confirmation.classList.remove("move-in");
+      setTimeout(() =>{
+         confirmation.classList.add("move-out");
+      },1800);
+      confirmation.classList.remove("move-out");
+      setTimeout(() =>{confirmation.classList.add("hidden")},2200);
       localStorage.setItem("playlists", JSON.stringify(playlists));
       populatePlaylists();
       populatePlaylist(0);
@@ -385,7 +425,20 @@ function mainLogic(){
    playlistContent.addEventListener("click", (e) =>{
       if(e.target.classList.contains("playlist-button")){
          const index = playlists[e.target.parentElement.parentElement.parentElement.dataset.index].songs.indexOf(e.target.parentElement.parentElement.dataset.id);
+         const id = playlists[e.target.parentElement.parentElement.parentElement.dataset.index].songs[index];
+         const song = songs.find(song => song.song_id == id);
+         confirmation.textContent = `Removed "${song.title}" from "${playlists[e.target.parentElement.parentElement.parentElement.dataset.index].name}"`
          playlists[e.target.parentElement.parentElement.parentElement.dataset.index].songs.splice(index,1);
+         confirmation.classList.remove("hidden");
+         setTimeout(() =>{
+            confirmation.classList.add("move-in");
+         },200);
+         confirmation.classList.remove("move-in");
+         setTimeout(() =>{
+            confirmation.classList.add("move-out");
+         },1800);
+         confirmation.classList.remove("move-out");
+         setTimeout(() =>{confirmation.classList.add("hidden")},2200);
          populatePlaylist(e.target.parentElement.parentElement.parentElement.dataset.index);
          localStorage.setItem("playlists", JSON.stringify(playlists));
       } else if (e.target.classList.contains("playlist-title")) {

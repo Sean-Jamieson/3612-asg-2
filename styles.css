@@ -1,11 +1,31 @@
+:root {
+    --header: #567D89;
+    --box: #567D89;
+    --list: #709F9D;
+    --font: #DEC584;
+    --button: #A16B56;
+    --buttonHover: #E0A370;
+}
+button {
+    background-color: var(--button);
+    color: var(--font);
+    border-radius: 8px;
+    border: none;
+}
+button:hover {
+    background-color: var(--buttonHover);
+    color: #6f5e43;
+}
 body {
+    background-color: #f1e7cd;
     font-family: 'Kelly Slab', cursive;
+    color: var(--font);
     overflow-x: hidden;
 }
 header {
     position:relative;
     margin: 0px 1% 0px 1%;
-    background-color: lightgrey;
+    background-color: var(--header);
     border: solid;
     border-width: 1px;
     border-radius: 7px;
@@ -44,24 +64,24 @@ Then slightly changed
   border-radius: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #DEC584; 
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #A16B56; 
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #E0A370; 
 }
 /*End borrowed code*/
 .move-in {
-    transform: translateY(400px);
-    transition: transform .5s ease-in-out;
+    transform: translateY(300px);
+    transition: transform .7s ease-in-out;
 }
 .move-out {
-    transform: translateY(-400px);
+    transform: translateY(-300px);
     transition: transform .5s ease-in-out;
 }
 .popup {
@@ -70,10 +90,9 @@ Then slightly changed
     border: groove 3px darkslategray;
     border-radius: 5px;
     position: absolute;    
-    top: 15px;
+    top: -285px;
     left: 50%;
     width: 300px;
-    height: auto;
     text-align: center;
     z-index: 999;
 }
@@ -117,12 +136,12 @@ Then slightly changed
 }
 #credit-panel {
     padding: 8px;
-    background-color: lightgrey;
+    background-color: var(--box);
     border: groove 2px darkslategray;
     border-radius: 5px;
     width: 230px;
     position: absolute; 
-    top: -370px;
+    top: -270px;
     left: 72%;
     z-index: 999;
     font-size: 20px;
@@ -140,7 +159,7 @@ Then slightly changed
     font-weight: bold;
     padding: 4px;
     margin: 15px 1% 5px 1%;
-    background-color: lightgrey;
+    background-color: var(--box);
     border: solid;
     border-radius: 5px;
     border-width: 1px;
@@ -152,10 +171,10 @@ input[type="radio"] {
     display:inline-block
 }
 .active {
-    color: black;
+    color: var(--font);
 }
 .inactive {
-    color: grey;
+    color: #6F5E43;
 }
 #search-criteria  .search-label{
     display: block;
@@ -225,7 +244,7 @@ margin-top: -3px;
 }
 #list-view-main #results {
     margin: 15px 1% 5px 0px;
-    background-color: lightgrey;
+    background-color: var(--box);
     grid-column-start: 2;
     grid-column-end: 6; 
     text-align: center;
@@ -244,7 +263,7 @@ margin-top: -3px;
 #results #result-list{
     padding: 0px 0px 0px 10px;
     margin-left: 0px;
-    background-color:  lightsteelblue;
+    background-color:  var(--list);
     border-radius: 5px;
     overflow-y: scroll;
     height: 359px;
@@ -257,7 +276,7 @@ margin-top: -3px;
     grid-template-columns: 4fr 2fr 1fr 2fr 2fr 1fr; 
 }
 .result-title,.playlist-title,.playlist-name{
-    color: darkblue;
+    color: #E0A370;
     cursor: pointer;
 }
 #list-header {
@@ -266,7 +285,7 @@ margin-top: -3px;
 }
 #playlist-panel {
     position: absolute;
-    background-color: lightgrey;
+    background-color: var(--box);
     border: solid 1px;
     border-radius: 5px;
     width: 200px;
@@ -299,7 +318,7 @@ It is old I know
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     display:inline-block;
-    border-top:10px solid skyblue;
+    border-top:10px solid var(--header);
     margin: 0px 2px 0px 0px;
 }
 /*End borrowed code*/
@@ -332,7 +351,7 @@ It is old I know
 }
 #song-view-main #song-info {
     min-width: 350px;
-    background-color: lightgrey;
+    background-color: var(--box);
     border: solid 1px;
     border-radius: 5px;
     margin: 0px 1% 0px 0px;
@@ -350,7 +369,7 @@ It is old I know
 }
 #song-view-main #graph {
     width: calc(100vw);
-    background-color: lightgrey;
+    background-color: var(--box);
     border: solid 1px;
     border-radius: 5px;
     margin: 0px;
@@ -376,8 +395,12 @@ It is old I know
     display: flex;
     margin: 15px 9px;
 }
+.playlist-name {
+    color: #E0A370;
+}
 #playlist-list ul{
     margin-left: -30px;
+    color: #b1966b;
     overflow-y: scroll;
     height: 391px;
     list-style: none;
@@ -385,13 +408,15 @@ It is old I know
 #playlist-list {
     width: 19%;
     min-width: 189px;
-    background-color: lightgrey;
+    background-color: var(--box);
     border: 1px solid;
     border-radius: 5px;
     margin: 0px 1% 0px 0px;
     height: 469px;
 }
-
+.playlist-button {
+    height: 20px;
+}
 #playlist-list h2{
     font-family: 'Condiment', cursive;
     margin: 10px 0px 0px 25px;
@@ -405,6 +430,8 @@ It is old I know
 }
 #playlist-remove {
 margin: 25px 0px 0px 0px;
+width: 125px;
+height: 35px;
 }
 #playlist-header {
     margin: 0px 0px 0px 20px;
@@ -436,10 +463,15 @@ playlist #stats{
     margin: 0px 0px 0px 20px;
 }
 #playlist-content{
-    margin-left: -30px;
     overflow-y: scroll;
+    padding-top: 20px;
+    border-radius: 5px;
+    padding: 5px 0px 0px 0px;
+    background-color: var(--list);
+    width:100%;
     height: 326px;
     list-style: none;
+    display: inline-block;
 }
 #song-count-container {
     margin: 25px 0px 0px -14px;
@@ -447,7 +479,7 @@ playlist #stats{
 #playlist {
     width: 80%;
     min-width: 697px;
-    background-color: lightgrey;
+    background-color: var(--box);
     margin: 0px;
     border: 1px solid;
     border-radius: 5px;
