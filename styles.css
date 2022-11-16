@@ -174,7 +174,7 @@ input[type="radio"] {
     color: var(--font);
 }
 .inactive {
-    color: #6F5E43;
+    color: #3a2d14;
 }
 #search-criteria  .search-label{
     display: block;

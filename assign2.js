@@ -35,21 +35,16 @@ function mainLogic(){
    const listView = document.querySelector("#list-view-main");
    const songview = document.querySelector("#song-view-main");
    const playlistView = document.querySelector("#playlist-view-main");
-   const titleRadio = document.querySelector("#title-radio")
    const playlistRemove = document.querySelector("#playlist-remove")
    const searchCriteria = document.querySelector("#search-criteria");
-   const results = document.querySelector("#results");
    const infoList = document.querySelector("#info-list");
    const catagories = document.querySelector("#catagories");
    const playlistPanel = document.querySelector("#playlist-panel");
-   const panelButton = document.querySelector("#panel-button");
    const panelField = document.querySelector("#panel-field");
-   const panelSelect = document.querySelector("#panel-select")
-   const resultList = document.querySelector("#result-list");
+   const panelSelect = document.querySelector("#panel-select");
    const playlistTitle = document.querySelector("#playlist-title");
    const songCount = document.querySelector("#song-count");
    const avgPopularity = document.querySelector("#avg-popularity");
-   const playlistListContent = document.querySelector("#playlist-list ul");
    const playlistContent = document.querySelector("#playlist-content");
    const creditPanel = document.querySelector("#credit-panel");
    let songs = JSON.parse(localStorage.getItem("songList"));
@@ -110,6 +105,7 @@ function mainLogic(){
 
    renderResults(songs);
    function renderResults(songs){
+      const resultList = document.querySelector("#result-list");
       resultList.innerHTML="";
       for(let song of songs) {
          const li = document.createElement("li");
@@ -147,6 +143,7 @@ function mainLogic(){
       }
    };
    function populatePlaylists() {
+      const playlistListContent = document.querySelector("#playlist-list ul");
       playlistListContent.innerHTML = "";
       if(playlists[0]!=null){
          for(let playlist of playlists) {
@@ -282,7 +279,7 @@ function mainLogic(){
    document.querySelector("#clear").addEventListener("click", () => {
       songs = JSON.parse(localStorage.getItem("songList"))
       renderResults(songs);
-      titleRadio.checked = "checked";
+      document.querySelector("#title-radio").checked = "checked";
       disableAll();
       enable("#title");
    });
@@ -292,7 +289,7 @@ function mainLogic(){
       }
    });
    //playlist panel pop-up event and title navigation to song page
-   resultList.addEventListener("click", (e) =>{
+   document.querySelector("#result-list").addEventListener("click", (e) =>{
       if(e.target.classList.contains("result-button")){
          let x = e.clientX;
          let y = e.clientY;
@@ -360,7 +357,7 @@ function mainLogic(){
       playlistPanel.classList.add("hidden");
       
    });
-   panelButton.addEventListener("click", (e) =>{
+   document.querySelector("#panel-button").addEventListener("click", (e) =>{
       if(panelField.value){
          if(!duplicatePlaylistCheck(panelField.value)){
             const songName = songs.find(song => song.song_id == playlistPanel.dataset.id).title
@@ -404,7 +401,7 @@ function mainLogic(){
       }
       return false;
    }
-   playlistListContent.addEventListener("click", (e) =>{
+   document.querySelector("#playlist-list ul").addEventListener("click", (e) =>{
       if(e.target.classList.contains("playlist-name")){
          for(let i = 0; i < playlists.length; i++) {
             if(playlists[i].name == e.target.textContent){
@@ -461,7 +458,7 @@ function mainLogic(){
    });
    playlistPanel.addEventListener("keypress", (e) =>{
       if(e.key === "Enter") {
-         panelButton.click();
+         document.querySelector("#panel-button").click();
       }
    });
    document.querySelector("#close-song").addEventListener("click", (e) =>{
@@ -531,7 +528,7 @@ function mainLogic(){
       myChart.update();
    }
    //filter by heading
-   results.addEventListener("click",(e)=>{
+   document.querySelector("#results").addEventListener("click",(e)=>{
       if(e.target.classList.contains("arrow")){
          const parent = e.target.parentElement;
          filterKey = parent.id;
