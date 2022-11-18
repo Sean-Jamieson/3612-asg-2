@@ -417,6 +417,12 @@ It is old I know
     margin: 0px 1% 0px 0px;
     height: 469px;
 }
+.remove-container {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 10px;
+}
 .playlist-button {
     height: 20px;
 }
@@ -453,6 +459,7 @@ playlist #stats{
     text-align: left;
     display: block;
     margin: 15px 0px 0px 0px;
+    max-width: 355px;
 }
 #stats div{
     display: inline-block;
@@ -472,7 +479,7 @@ playlist #stats{
     padding: 5px 0px 0px 0px;
     background-color: var(--list);
     width:100%;
-    height: 326px;
+    height: 321px;
     list-style: none;
     display: inline-block;
 }
