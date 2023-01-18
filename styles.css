@@ -318,7 +318,7 @@ It is old I know
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     display:inline-block;
-    border-top:10px solid var(--header);
+    border-top:10px solid var(--buttonHover);
     margin: 0px 2px 0px 0px;
 }
 /*End borrowed code*/
