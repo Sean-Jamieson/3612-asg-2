@@ -45,6 +45,7 @@ hr {
     margin: 5px 0px;
 }
 footer {
+    color: var(--header);
     text-align: center;
 }
 hr {
